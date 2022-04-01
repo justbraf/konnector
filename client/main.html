@@ -15,10 +15,10 @@
 
 <template name="app_layout">
   <div class="row">
-    <div class="col-3" id="mainPageLeft">
+    <div class="col-3 sideBar">
       {{> Template.dynamic template=sideBar}}
     </div>
-    <div class="col-9" id="mainPageRight">
+    <div class="col-9">
       {{> Template.dynamic template=nav}}
       {{> Template.dynamic template=mainBody}}
       {{> Template.dynamic template=footer}}

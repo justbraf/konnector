@@ -1,9 +1,10 @@
 @import url('fonts/BAHNSCHRIFT.TTF');
+@import url('fonts/gadugi-bold.ttf');
 
 body {
   padding: 0;
   margin: 0;
-  font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Bahnschrift";
+  font-family: "Bahnschrift", "Gadugi", "Font Awesome 5 Free", "Font Awesome 5 Pro";
 }
 
 .at-form {
@@ -38,10 +39,16 @@ body {
 }
 
 .sideBar {
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #ffb233;
   border-right: 5px solid black;
   padding: 15px;
+  font-size: 1.5rem;
+}
+
+.sideBar h1 {
+  font-family: 'Gadugi';
+  font-weight: 900;
 }
 
 .rowAlt {
@@ -51,17 +58,23 @@ body {
   font-size: 1.5rem;
 }
 
-#mainPageLeft {
-  padding: 0 !important;
-}
-
-#mainPageRight {
-  padding-right: 0 !important;
-}
-
-.emailLnk,
-.emailLnk:visited {
+.sysLinks,
+.sysLinks:visited {
   text-decoration: none;
   cursor: pointer;
+}
+
+.emailLnk {
   color: white;
+}
+
+.logoutLink {
+  color: black;
+}
+
+.pinBottom {
+  position: fixed;
+  bottom: 0;
+  right: 12px;
+  width: 75vw;
 }
