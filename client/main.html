@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid mainContainer">
     <!--{{> signInForm}}
     {{#if currentUser}}
       {{> addProfile}}
@@ -14,7 +14,15 @@
 </body>
 
 <template name="app_layout">
-  {{> Template.dynamic template=nav}}
-  {{> Template.dynamic template=header}}
-  {{> Template.dynamic template=mainBody}}
+  <div class="row">
+    <div class="col-3" id="mainPageLeft">
+      {{> Template.dynamic template=sideBar}}
+    </div>
+    <div class="col-9" id="mainPageRight">
+      {{> Template.dynamic template=nav}}
+      {{> Template.dynamic template=mainBody}}
+      {{> Template.dynamic template=footer}}
+    </div>
+  </div>
+
 </template>

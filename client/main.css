@@ -1,10 +1,67 @@
+@import url('fonts/BAHNSCHRIFT.TTF');
+
 body {
-  padding: 10px;
-  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Bahnschrift";
 }
+
 .at-form {
-  border: 1px solid rgb(61, 129, 238) !important;
+  /* border: 1px solid rgb(61, 129, 238) !important; */
 }
+
+#at-btn {
+  color: white;
+  font-weight: 400;
+  background-color: #ffb233;
+  border: 2px solid black;
+}
+
 .navFix {
   margin-left: 30px;
+}
+
+.navIcons {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 2rem;
+  color: black;
+}
+
+.iconUser {
+  font-size: 12rem;
+  color: #ffb233;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.sideBar {
+  min-height: 100%;
+  background-color: #ffb233;
+  border-right: 5px solid black;
+  padding: 15px;
+}
+
+.rowAlt {
+  background-color: black;
+  min-height: 5px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#mainPageLeft {
+  padding: 0 !important;
+}
+
+#mainPageRight {
+  padding-right: 0 !important;
+}
+
+.emailLnk,
+.emailLnk:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
 }

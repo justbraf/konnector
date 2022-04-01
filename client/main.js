@@ -10,7 +10,7 @@ import '../lib/userAcct.js';
 import '../lib/router.js';
 
 import './main.html';
-
+import './footer/footer.html';
 import './error404.html';
 
 import './signIn/signIn.html';
@@ -21,3 +21,6 @@ import './landing/landing.js';
 
 import './navbar/navBar.html';
 import './navbar/navBar.js';
+
+import './sideBar/sideBar.html';
+import './sideBar/sideBar.js';
