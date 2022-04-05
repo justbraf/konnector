@@ -1,0 +1,17 @@
+<template name="confirm">
+    <div class="modal fade" id="confirmModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Are you sure?</h5>
+                    <input type="hidden" id="confirmID">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger js-confirm">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

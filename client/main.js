@@ -13,6 +13,8 @@ import '../lib/router.js';
 import './main.html';
 import './footer/footer.html';
 import './error404.html';
+import './components/confirmation.html';
+import './components/saveDialog.html';
 
 import './signIn/signIn.html';
 import './signIn/signIn.js';

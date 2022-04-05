@@ -116,3 +116,45 @@ body {
 .btn-crs:hover {
   background-color: #f89b04 !important;
 }
+
+.invalidWarn {
+  border: 2px solid #dc3545 !important;
+}
+
+.myTooltip {
+  background: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  position: relative;
+}
+
+.arrow,
+.arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+.arrow {
+  visibility: hidden;
+  top: -4px;
+  left: 50px;
+}
+
+.arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.iconText {
+  font-size: 1.5rem;
+}
+
+.footerFix {
+  padding-bottom: 4rem;
+}

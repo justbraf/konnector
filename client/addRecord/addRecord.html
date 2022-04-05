@@ -6,22 +6,37 @@
                 <div class="col-lg">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="nameLabel">Name</span>
-                        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName"
-                            id="fName" aria-describedby="nameLabel">
-                        <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname" id="lName"
-                            aria-describedby="nameLabel">
+                        <input type="text" class="form-control" placeholder="First" aria-label="FirstName"
+                            pattern="[A-Za-z]{15}" id="fName" aria-describedby="nameLabel">
+                        <input type="text" classT="form-control" placeholder="Last" aria-label="Lastname" id="lName"
+                            pattern="[A-Za-z]{15}" aria-describedby="nameLabel">
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="names" role="tooltip">
+                        Enter at Least One Name or Invalid Characters
+                        <div class="arrow" data-popper-arrow></div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="otherNameLabel">Other Names</span>
+                        <input type="text" class="form-control" placeholder="Middle & Other" aria-label="otherNameLabel"
+                            pattern="[A-Za-z]{15}" id="oName" aria-describedby="otherNameLabel">
                     </div>
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="inputGroupSelect01">Sex</label>
                         <select class="form-select" id="gender">
-                            <option selected value="female">Female</option>
-                            <option value="male">Male</option>
+                            <option selected value="Female">Female</option>
+                            <option value="Male">Male</option>
                         </select>
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="gen" role="tooltip">
+                        Invalid gender
+                        <div class="arrow" data-popper-arrow></div>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="ageLabel">Age</span>
-                        <input type="number" class="form-control" placeholder="Age" aria-label="Age" id="age" min="0"
-                            max="21" aria-describedby="ageLabel">
+                        <input type="number" class="form-control" placeholder="Current Age" aria-label="Age" id="age"
+                            min="0" max="21" aria-describedby="ageLabel">
                     </div>
                     <div class="input-group mb-3">
                         <i class="fa fa-calendar input-group-text"></i>
@@ -30,8 +45,9 @@
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="nationalID">National ID</span>
-                        <input type="text" class="form-control" placeholder="National ID" aria-label="National ID"
-                            id="natId" min="0" max="21" aria-describedby="nationalID" pattern="\d{6}-?\d{4}">
+                        <input type="text" class="form-control" placeholder="National Identicication Number"
+                            aria-label="National ID" id="natId" min="0" max="21" aria-describedby="nationalID"
+                            pattern="\d{6}-?\d{4}">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Address</span>
@@ -41,40 +57,63 @@
                 <!-- right column -->
                 <div class="col-lg">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="heightLabel">Height</span>
-                        <input type="text" class="form-control" placeholder="Height" aria-label="Height" id="height"
-                            aria-describedby="heightLabel">
+                        <label for="customRange2" class="form-label">Height: {{rangeCM}} / {{rangeIN}}</label>
+                        <input type="range" class="form-range js-heightSlide" min="30" max="215" value="60"
+                            id="heightRange">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="eyeColour">Eye Colour</span>
-                        <input type="text" class="form-control" placeholder="Eye Colour" aria-label="Eye Colour"
-                            id="eye" aria-describedby="eyeColour">
+                        <label class="input-group-text" for="inputGroupSelectEyes">Eye Colour</label>
+                        <select class="form-select" id="eye">
+                            <option selected value="Brown">Brown</option>
+                            <option value="Hazel">Hazel</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Green">Green</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Amber">Amber</option>
+                        </select>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="hairColour">Hair Colour</span>
-                        <input type="text" class="form-control" placeholder="Hair Colour" aria-label="Hair Colour"
-                            id="hair" aria-describedby="hairColour">
+                        <input type="text" class="form-control" placeholder="Natural Hair Colour"
+                            aria-label="Hair Colour" id="hair" aria-describedby="hairColour">
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="hairs" role="tooltip">
+                        Missing Hair Colour
+                        <div class="arrow" data-popper-arrow></div>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="skinColour">Skin colour</span>
-                        <input type="text" class="form-control" placeholder="Skin colour" aria-label="Skin colour"
-                            id="skin" aria-describedby="skinColour">
+                        <input type="text" class="form-control" placeholder="Natural Skin colour"
+                            aria-label="Skin colour" id="skin" aria-describedby="skinColour">
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="skins" role="tooltip">
+                        Missing Skin Colour
+                        <div class="arrow" data-popper-arrow></div>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="ethinicityLabel">Ethinicity</span>
-                        <input type="text" class="form-control" placeholder="Ethinicity" aria-label="Ethinicity"
+                        <input type="text" class="form-control" placeholder="Ethinicity/Race" aria-label="Ethinicity"
                             id="ethin" aria-describedby="ethinicityLabel">
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="ethins" role="tooltip">
+                        Missing Ethinicity
+                        <div class="arrow" data-popper-arrow></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row d-print-none">
+    <div class="row mt-2 d-print-none">
         <div class="col-lg-2 text-end">
             <i class="fa fa-print iconPrint js-print" aria-hidden="true"></i>
+            <span class="iconText">Print</span>
         </div>
         <div class="col-lg-7 text-center">
             <div class="btn btn-crs js-addRecord">Add to Database</div>
         </div>
     </div>
+    {{> saveDialog}}
 </template>

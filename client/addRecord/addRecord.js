@@ -13,7 +13,6 @@ Template.addRecord.onRendered(() => {
         }
         return titleText;
     }
-
     const elems = document.querySelectorAll('.datepicker_input');
     for (const elem of elems) {
         const datepicker = new Datepicker(elem, {
@@ -21,43 +20,136 @@ Template.addRecord.onRendered(() => {
             title: getDatePickerTitle(elem)
         });
     }
+    Session.set("height", 60);
+});
+
+Template.addRecord.helpers({
+    rangeCM() {
+        return Session.get("height") + " cm";
+    },
+    rangeIN() {
+        let inches = Session.get("height") / 2.54;
+        inches = Math.round(inches);
+        let feet = (inches - (inches % 12)) / 12;
+        inches = inches - (feet * 12);
+        let footHeight = 0;
+        if (inches == 0)
+            footHeight = feet + " ft";
+        else
+            footHeight = feet + " ft " + inches + " in";
+
+        return footHeight;
+    }
 });
 
 Template.addRecord.events({
     'click .js-print'() {
         window.print();
     },
+    'change .js-heightSlide'() {
+        Session.set("height", $("#heightRange").val());
+    },
     // confirmation msg and clear the input boxes
     'click .js-addRecord'() {
-        let fName = $("#fName").val()
-        let lName = $("#lName").val()
-        let gender = $("#gender").val()
-        let age = $("#age").val()
-        let dob = $("#dob").val()
-        let natId = $("#natId").val()
-        let addr = $("#addr").val()
-        let height = $("#height").val()
-        let eye = $("#eye").val()
-        let hair = $("#hair").val()
-        let skin = $("#skin").val()
-        let ethin = $("#ethin").val()
+        let fName = $("#fName").val();
+        let lName = $("#lName").val();
+        let oName = $("#oName").val();
+        let gender = $("#gender").val();
+        let age = $("#age").val();
+        let dob = $("#dob").val();
+        let natId = $("#natId").val();
+        let addr = $("#addr").val();
+        let height = $("#heightRange").val();
+        let eye = $("#eye").val();
+        let hair = $("#hair").val();
+        let skin = $("#skin").val();
+        let ethin = $("#ethin").val();
 
-        profilesdb.insert({
-            "fName": fName,
-            "lName": lName,
-            "gender": gender,
-            "age": age,
-            "dob": dob,
-            "natId": natId,
-            "addr": addr,
-            "height": height,
-            "eye": eye,
-            "hair": hair,
-            "skin": skin,
-            "ethin": ethin,
-            "agent": Meteor.userId(),
-            "agentName": Meteor.user().username,
-            "createdOn": new Date().getTime()
-        });
+        //validate form
+        if (isAddRecordValid(fName, lName, hair, skin, ethin)) {
+            $('#saveDialogModal').modal('show');
+            // Save data into collection
+            // profilesdb.insert({
+            //     "fName": fName,
+            //     "lName": lName,
+            //     "oName": oName,
+            //     "gender": gender,
+            //     "age": age,
+            //     "dob": dob,
+            //     "natId": natId,
+            //     "addr": addr,
+            //     "height": height,
+            //     "eye": eye,
+            //     "hair": hair,
+            //     "skin": skin,
+            //     "ethin": ethin,
+            //     "agent": Meteor.userId(),
+            //     "agentName": Meteor.user().username,
+            //     "createdOn": new Date().getTime()
+            // });
+            // Clear form
+            $("#fName").val("");
+            $("#lName").val("");
+            $("#oName").val("");
+            $("#age").val("");
+            $("#dob").val("");
+            $("#natId").val("");
+            $("#addr").val("");
+            $("#hair").val("");
+            $("#skin").val("");
+            $("#ethin").val("");
+            Session.set("height", 60);
+            $("#heightRange").val(60);
+            $("#gender").val("Female");
+            $("#eye").val("Brown");
+        }
     }
 });
+
+isAddRecordValid = (fName, lName, hair, skin, ethin) => {
+    let isValid = true;
+    $("#fName").removeClass("invalidWarn");
+    $("#names").addClass("d-none");
+    $("#lName").removeClass("invalidWarn");
+    $("#age").removeClass("invalidWarn");
+    $("#ages").addClass("d-none");
+    $("#gender").removeClass("invalidWarn");
+    $("#gen").addClass("d-none");
+    $("#height").removeClass("invalidWarn");
+    $("#heights").addClass("d-none");
+    $("#hair").removeClass("invalidWarn");
+    $("#hairs").addClass("d-none");
+    $("#skin").removeClass("invalidWarn");
+    $("#skins").addClass("d-none");
+    $("#ethin").removeClass("invalidWarn");
+    $("#ethins").addClass("d-none");
+    if (!fName && !lName) {
+        if (!fName) {
+            $("#fName").addClass("invalidWarn");
+            $("#names").removeClass("d-none");
+        }
+        if (!lName) {
+            $("#lName").addClass("invalidWarn");
+            $("#names").removeClass("d-none");
+        }
+        isValid = false;
+    }
+    if (!hair) {
+        $("#hair").addClass("invalidWarn");
+        $("#hairs").removeClass("d-none");
+        isValid = false;
+    }
+
+    if (!skin) {
+        $("#skin").addClass("invalidWarn");
+        $("#skins").removeClass("d-none");
+        isValid = false;
+    }
+
+    if (!ethin) {
+        $("#ethin").addClass("invalidWarn");
+        $("#ethins").removeClass("d-none");
+        isValid = false;
+    }
+    return isValid;
+}
