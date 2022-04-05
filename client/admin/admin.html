@@ -1,0 +1,17 @@
+<template name="adminMan">
+    <div class="row">
+        <div class="col-lg">
+            <h1 class="display-5">Admin</h1>
+        </div>
+    </div>
+    {{#each allUsers}}
+    <div class="row">
+        <div class="col-lg-3">
+            {{username}}
+        </div>
+        <div class="col-lg-3">
+            {{profile.sex}}
+        </div>
+    </div>
+    {{/each}}
+</template>

@@ -5,7 +5,11 @@ itsMyTime = () => Session.set("theDateandTime", new Date());
 
 Template.nav.onCreated(() => {
     itsMyTime();
-    Meteor.setInterval(() => { itsMyTime(); }, 1000);
+    this.timerHandle = Meteor.setInterval(() => { itsMyTime(); }, 1000);
+});
+
+Template.nav.onDestroyed(() => {
+    Meteor.clearInterval(this.timerHandle);
 });
 
 Template.nav.events({
@@ -22,6 +26,6 @@ Template.nav.helpers({
         return date.format(Session.get("theDateandTime"), 'D/M/YYYY');
     },
     currTime() {
-        return date.format(Session.get("theDateandTime"), 'h:mm A');
+        return date.format(Session.get("theDateandTime"), 'h:mm:ss A');
     }
 });

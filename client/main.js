@@ -34,3 +34,6 @@ import './viewRecord/viewRecord.js';
 
 import './matchParent/matchParent.html';
 import './matchParent/matchParent.js';
+
+import './admin/admin.html';
+import './admin/admin.js';
