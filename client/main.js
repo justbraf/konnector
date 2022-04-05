@@ -25,3 +25,12 @@ import './navbar/navBar.js';
 
 import './sideBar/sideBar.html';
 import './sideBar/sideBar.js';
+
+import './addRecord/addRecord.html';
+import './addRecord/addRecord.js';
+
+import './viewRecord/viewRecord.html';
+import './viewRecord/viewRecord.js';
+
+import './matchParent/matchParent.html';
+import './matchParent/matchParent.js';

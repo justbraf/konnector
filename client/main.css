@@ -31,6 +31,11 @@ body {
   color: black;
 }
 
+.navIcons>svg {
+  position: relative;
+  bottom: 5px;
+}
+
 .iconUser {
   font-size: 12rem;
   color: #ffb233;
@@ -58,18 +63,27 @@ body {
   font-size: 1.5rem;
 }
 
+.rowAlt2 {
+  font-family: "Bahnschrift";
+  background-color: #ffb233;
+  min-height: 10px;
+  color: black;
+  font-size: 1.5rem;
+}
+
 .sysLinks,
 .sysLinks:visited {
   text-decoration: none;
   cursor: pointer;
+  color: black;
 }
 
 .emailLnk {
   color: white;
 }
 
-.logoutLink {
-  color: black;
+#logoCRS {
+  width: 100%;
 }
 
 .pinBottom {
@@ -77,4 +91,15 @@ body {
   bottom: 0;
   right: 12px;
   width: 75vw;
+}
+
+.btn-crs,
+.btn-crs:active {
+  color: #000 !important;
+  background-color: #ffb233 !important;
+  border-color: #c85000 !important;
+}
+
+.btn-crs:hover {
+  background-color: #f89b04 !important;
 }

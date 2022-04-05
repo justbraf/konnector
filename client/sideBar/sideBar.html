@@ -1,32 +1,25 @@
 <template name="sideBar">
     <div class="row">
         <div class="col-lg">
-            <h1 class="display-5">Child</h1>
-            <h1 class="display-5">Recovery</h1>
-            <h1 class="display-5">System</h1>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-lg">
-            Home
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-lg">
-            Add a record
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-lg">
-            View Records
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-lg">
-            Match parent
+            <img id="logoCRS" src="crs-logo.png" alt="CRS Logo">
         </div>
     </div>
     {{#if currentUser}}
+    <div class="row mt-3">
+        <div class="col-lg">
+            <a class="sysLinks" href="/add">Add a Record</a>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg">
+            <a class="sysLinks" href="/view">View Records</a>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg">
+            <a class="sysLinks" href="/match">Match parent</a>
+        </div>
+    </div>
     <div class="row mt-3">
         <div class="col-lg">
             <a class="sysLinks logoutLink js-logout" href="#">Logout</a>

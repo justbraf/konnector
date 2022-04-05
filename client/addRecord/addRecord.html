@@ -1,0 +1,80 @@
+<template name="addRecord">
+    <div class="row justify-content-around mt-5">
+        <div class="col-lg-10">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="nameLabel">Name</span>
+                        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName"
+                            id="fName" aria-describedby="nameLabel">
+                        <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname" id="lName"
+                            aria-describedby="nameLabel">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Sex</label>
+                        <select class="form-select" id="gender">
+                            <option selected value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="ageLabel">Age</span>
+                        <input type="number" class="form-control" placeholder="Age" aria-label="Age" id="age" min="0"
+                            max="21" aria-describedby="ageLabel">
+                    </div>
+                    <div class="input-group mb-3">
+                        <i class="fa fa-calendar input-group-text"></i>
+                        <input type="text" class="datepicker_input form-control" placeholder="Date of Birth" id="dob"
+                            aria-label="Date of Birth">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="nationalID">National ID</span>
+                        <input type="text" class="form-control" placeholder="National ID" aria-label="National ID"
+                            id="natId" min="0" max="21" aria-describedby="nationalID" pattern="\d{6}-?\d{4}">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Address</span>
+                        <textarea class="form-control" aria-label="Address" id="addr"></textarea>
+                    </div>
+                </div>
+                <!-- right column -->
+                <div class="col-lg">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="heightLabel">Height</span>
+                        <input type="text" class="form-control" placeholder="Height" aria-label="Height" id="height"
+                            aria-describedby="heightLabel">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="eyeColour">Eye Colour</span>
+                        <input type="text" class="form-control" placeholder="Eye Colour" aria-label="Eye Colour"
+                            id="eye" aria-describedby="eyeColour">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="hairColour">Hair Colour</span>
+                        <input type="text" class="form-control" placeholder="Hair Colour" aria-label="Hair Colour"
+                            id="hair" aria-describedby="hairColour">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="skinColour">Skin colour</span>
+                        <input type="text" class="form-control" placeholder="Skin colour" aria-label="Skin colour"
+                            id="skin" aria-describedby="skinColour">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="ethinicityLabel">Ethinicity</span>
+                        <input type="text" class="form-control" placeholder="Ethinicity" aria-label="Ethinicity"
+                            id="ethin" aria-describedby="ethinicityLabel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 text-center">
+            <i class="fa fa-print" aria-hidden="true"></i>
+        </div>
+        <div class="col-lg-7 text-center">
+            <div class="btn btn-crs js-addRecord">Add to Database</div>
+        </div>
+    </div>
+</template>

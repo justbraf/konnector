@@ -1,7 +1,7 @@
 <template name="nav">
   <div class="row justify-content-between my-3">
     <div class="col-lg-3">
-      <a href="#" class="display-6 navIcons">
+      <a href="/" class="display-6 navIcons">
         <!-- home icon -->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
           x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;"
@@ -16,7 +16,8 @@
       </a>
     </div>
     <div class="col-lg-3">
-      <a href="#" class="navIcons js-login">
+      {{#if currentUser}}
+      <a href="#" class="navIcons js-logout">
         <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
         <!-- user icon -->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
@@ -28,42 +29,28 @@
               d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z" />
           </g>
         </svg>
-        Login
+        Logout
       </a>
+      {{/if}}
     </div>
 
   </div>
-  <div class="row rowAlt"></div>
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">v Child Recovery System</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles">Add Child</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles">View Entries</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profiles">Match Parent</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        {{#if currentUser}}
-        <button class="btn btn-danger js-logout navFix">Logout</button>
-        {{/if}}
-      </div>
+  <div class="row rowAlt justify-content-between">
+    {{#if currentUser}}
+    <div class="col-lg-3">
+      (Table>Add Record)
     </div>
-  </nav> -->
+    <div class="col-lg-3">
+      {{currTime}}
+    </div>
+    <div class="col-lg-3">
+      {{currDate}}
+    </div>
+    <div class="col-lg-3">
+      {{#if currentUser}}
+      {{username}}
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
 </template>

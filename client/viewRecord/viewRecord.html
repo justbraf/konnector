@@ -1,0 +1,42 @@
+<template name="viewRecord">
+    <div class="row rowAlt2 justify-content-between">View Records</div>
+    <div class="row justify-content-evenly my-3">
+        {{#each records}}
+        <div class="col-lg-3 mx-2 my-3">
+            <div class="card" style="width: 18rem;">
+                <i class="fa fa-user iconUser text-center mx-4 mt-2" aria-hidden="true"></i>
+                <div class="card-body">
+                    <h5 class="card-title">{{lName}},&nbsp;{{fName}}</h5>
+                    <p class="card-text">
+                        Gender: {{gender}} Age: {{age}}<br>
+                        Date of Birth: {{dob}}
+                    </p>
+                    <a href="" class="btn btn-crs js-viewMore">View More</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Showing Record for <span id="childName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="lname"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    View records
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal">
+        Launch demo modal
+    </button>
+</template>

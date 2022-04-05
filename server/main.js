@@ -6,11 +6,10 @@ Meteor.startup(() => {
   // code to run on server at startup
 });
 
-// Meteor.publish('profData', function () {
-//   return profilesdb.find({}, {
-//     // fields: {pOwn: 1} // 0 hides the key and 1 shows the key
-//   });
-// });
+Meteor.publish('crsData', function () {
+  return profilesdb.find({}, {
+  });
+});
 
 // Meteor.publish('proDat', function (data) {
 //   return profilesdb.find({ _id: data }, {
