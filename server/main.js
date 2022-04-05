@@ -11,6 +11,11 @@ Meteor.publish('crsData', function () {
   });
 });
 
+Meteor.publish('adminData', function () {
+  return Meteor.users.find({}, {
+  });
+});
+
 // Meteor.publish('proDat', function (data) {
 //   return profilesdb.find({ _id: data }, {
 //     // fields: {pOwn: 1} // 0 hides the key and 1 shows the key

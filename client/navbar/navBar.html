@@ -1,5 +1,5 @@
 <template name="nav">
-  <div class="row justify-content-between my-3">
+  <div class="row justify-content-between my-3 d-print-none">
     <div class="col-lg-3">
       <a href="/" class="display-6 navIcons">
         <!-- home icon -->
@@ -35,10 +35,10 @@
     </div>
 
   </div>
-  <div class="row rowAlt justify-content-between">
+  <div class="row rowAlt justify-content-between d-print-none">
     {{#if currentUser}}
     <div class="col-lg-3">
-      (Table>Add Record)
+      (Bread>crumbs)
     </div>
     <div class="col-lg-3">
       {{currTime}}
@@ -52,5 +52,10 @@
       {{/if}}
     </div>
     {{/if}}
+  </div>
+  <div class="row justify-content-around d-print-block d-none">
+    <div class="col">
+      <h1 class="display-4">Child Recovery Services</h1>
+    </div>
   </div>
 </template>

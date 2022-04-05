@@ -43,6 +43,19 @@ body {
   border-radius: 50%;
 }
 
+.iconPrint {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 2rem;
+  color: black;
+}
+
+.iconPrint:hover {
+  color: #f89b04;
+}
+
 .sideBar {
   min-height: 100vh;
   background-color: #ffb233;

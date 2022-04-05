@@ -1,4 +1,12 @@
+// import { Session } from 'meteor/session';
 import date from 'date-and-time';
+
+itsMyTime = () => Session.set("theDateandTime", new Date());
+
+Template.nav.onCreated(() => {
+    itsMyTime();
+    Meteor.setInterval(() => { itsMyTime(); }, 1000);
+});
 
 Template.nav.events({
     'click .js-logout'() {
@@ -11,9 +19,9 @@ Template.nav.helpers({
         return Meteor.user().username; //.emails[0].address;
     },
     currDate() {
-        return date.format(new Date(), 'D/M/YYYY');
+        return date.format(Session.get("theDateandTime"), 'D/M/YYYY');
     },
     currTime() {
-        return date.format(new Date(), 'h:mm');
+        return date.format(Session.get("theDateandTime"), 'h:mm A');
     }
 });

@@ -24,6 +24,9 @@ Template.addRecord.onRendered(() => {
 });
 
 Template.addRecord.events({
+    'click .js-print'() {
+        window.print();
+    },
     // confirmation msg and clear the input boxes
     'click .js-addRecord'() {
         let fName = $("#fName").val()
