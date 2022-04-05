@@ -1,6 +1,13 @@
 Template.viewRecord.helpers({
     records() {
         return profilesdb.find();
+    },
+    isGirl() {
+        let gend = false;
+        console.log(profilesdb.findOne({ _id: this._id }).gender);
+        if (profilesdb.findOne({ _id: this._id }).gender == "Female")
+            gend = true;
+        return gend;
     }
 });
 

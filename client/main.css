@@ -7,10 +7,6 @@ body {
   font-family: "Bahnschrift", "Gadugi", "Font Awesome 5 Free", "Font Awesome 5 Pro";
 }
 
-.at-form {
-  /* border: 1px solid rgb(61, 129, 238) !important; */
-}
-
 #at-btn {
   color: white;
   font-weight: 400;

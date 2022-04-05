@@ -4,7 +4,11 @@
         {{#each records}}
         <div class="col-lg-3 mx-2 my-3">
             <div class="card" style="width: 18rem;">
-                <i class="fa fa-user iconUser text-center mx-4 mt-2" aria-hidden="true"></i>
+                {{#if isGirl}}
+                <img src="girl.png" alt="Girl Avatar">
+                {{else}}
+                <img src="boy.png" alt="Boy Avatar">
+                {{/if}}
                 <div class="card-body">
                     <h5 class="card-title">{{lName}},&nbsp;{{fName}}</h5>
                     <p class="card-text">

@@ -69,24 +69,24 @@ Template.addRecord.events({
         if (isAddRecordValid(fName, lName, hair, skin, ethin)) {
             $('#saveDialogModal').modal('show');
             // Save data into collection
-            // profilesdb.insert({
-            //     "fName": fName,
-            //     "lName": lName,
-            //     "oName": oName,
-            //     "gender": gender,
-            //     "age": age,
-            //     "dob": dob,
-            //     "natId": natId,
-            //     "addr": addr,
-            //     "height": height,
-            //     "eye": eye,
-            //     "hair": hair,
-            //     "skin": skin,
-            //     "ethin": ethin,
-            //     "agent": Meteor.userId(),
-            //     "agentName": Meteor.user().username,
-            //     "createdOn": new Date().getTime()
-            // });
+            profilesdb.insert({
+                "fName": fName,
+                "lName": lName,
+                "oName": oName,
+                "gender": gender,
+                "age": age,
+                "dob": dob,
+                "natId": natId,
+                "addr": addr,
+                "height": height,
+                "eye": eye,
+                "hair": hair,
+                "skin": skin,
+                "ethin": ethin,
+                "agent": Meteor.userId(),
+                "agentName": Meteor.user().username,
+                "createdOn": new Date().getTime()
+            });
             // Clear form
             $("#fName").val("");
             $("#lName").val("");
