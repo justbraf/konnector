@@ -1,3 +1,4 @@
+Template.viewRecord.onRendered(() => Session.set("breadcrumbs", "View Record"));
 Template.viewRecord.helpers({
     records() {
         return profilesdb.find();

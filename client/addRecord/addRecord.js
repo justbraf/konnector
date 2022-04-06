@@ -21,6 +21,7 @@ Template.addRecord.onRendered(() => {
         });
     }
     Session.set("height", 60);
+    Session.set("breadcrumbs", "Add Record");
 });
 
 Template.addRecord.helpers({
@@ -49,7 +50,6 @@ Template.addRecord.events({
     'change .js-heightSlide'() {
         Session.set("height", $("#heightRange").val());
     },
-    // confirmation msg and clear the input boxes
     'click .js-addRecord'() {
         let fName = $("#fName").val();
         let lName = $("#lName").val();
@@ -64,9 +64,10 @@ Template.addRecord.events({
         let hair = $("#hair").val();
         let skin = $("#skin").val();
         let ethin = $("#ethin").val();
+        let foun = $("#foun").val();
 
         //validate form
-        if (isAddRecordValid(fName, lName, hair, skin, ethin)) {
+        if (isAddRecordValid(fName, lName, hair, skin, ethin, foun)) {
             $('#saveDialogModal').modal('show');
             // Save data into collection
             profilesdb.insert({
@@ -83,6 +84,8 @@ Template.addRecord.events({
                 "hair": hair,
                 "skin": skin,
                 "ethin": ethin,
+                "foun": foun,
+                "matched": false,
                 "agent": Meteor.userId(),
                 "agentName": Meteor.user().username,
                 "createdOn": new Date().getTime()
@@ -98,6 +101,7 @@ Template.addRecord.events({
             $("#hair").val("");
             $("#skin").val("");
             $("#ethin").val("");
+            $("#foun").val("");
             Session.set("height", 60);
             $("#heightRange").val(60);
             $("#gender").val("Female");
@@ -106,7 +110,8 @@ Template.addRecord.events({
     }
 });
 
-isAddRecordValid = (fName, lName, hair, skin, ethin) => {
+// Validate form data
+isAddRecordValid = (fName, lName, hair, skin, ethin, foun) => {
     let isValid = true;
     $("#fName").removeClass("invalidWarn");
     $("#names").addClass("d-none");
@@ -123,6 +128,8 @@ isAddRecordValid = (fName, lName, hair, skin, ethin) => {
     $("#skins").addClass("d-none");
     $("#ethin").removeClass("invalidWarn");
     $("#ethins").addClass("d-none");
+    $("#foun").removeClass("invalidWarn");
+    $("#founs").addClass("d-none");
     if (!fName && !lName) {
         if (!fName) {
             $("#fName").addClass("invalidWarn");
@@ -139,16 +146,19 @@ isAddRecordValid = (fName, lName, hair, skin, ethin) => {
         $("#hairs").removeClass("d-none");
         isValid = false;
     }
-
     if (!skin) {
         $("#skin").addClass("invalidWarn");
         $("#skins").removeClass("d-none");
         isValid = false;
     }
-
     if (!ethin) {
         $("#ethin").addClass("invalidWarn");
         $("#ethins").removeClass("d-none");
+        isValid = false;
+    }
+    if (!foun) {
+        $("#foun").addClass("invalidWarn");
+        $("#founs").removeClass("d-none");
         isValid = false;
     }
     return isValid;

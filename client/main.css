@@ -154,3 +154,19 @@ body {
 .footerFix {
   padding-bottom: 4rem;
 }
+
+#rangeHeight>label {
+  background: #e9ecef;
+  color: #212529;
+  width: 100%;
+  padding: 6px 12px;
+}
+
+#rangeHeight>input {
+  padding: 0 10px 5px;
+}
+
+#rangeHeight {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}

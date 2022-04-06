@@ -56,8 +56,8 @@
                 </div>
                 <!-- right column -->
                 <div class="col-lg">
-                    <div class="input-group mb-3">
-                        <label for="customRange2" class="form-label">Height: {{rangeCM}} / {{rangeIN}}</label>
+                    <div class="input-group mb-3" id="rangeHeight">
+                        <label for="heightRange" class="form-label">Height: {{rangeCM}} / {{rangeIN}}</label>
                         <input type="range" class="form-range js-heightSlide" min="30" max="215" value="60"
                             id="heightRange">
                     </div>
@@ -100,6 +100,16 @@
                     <!-- Tooltip messsage -->
                     <div class="myTooltip d-none mb-1" id="ethins" role="tooltip">
                         Missing Ethinicity
+                        <div class="arrow" data-popper-arrow></div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Location</span>
+                        <textarea class="form-control" aria-label="Address" placeholder="Location Found"
+                            id="foun"></textarea>
+                    </div>
+                    <!-- Tooltip messsage -->
+                    <div class="myTooltip d-none mb-1" id="founs" role="tooltip">
+                        Missing Location Found
                         <div class="arrow" data-popper-arrow></div>
                     </div>
                 </div>

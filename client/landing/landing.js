@@ -1,0 +1,1 @@
+Template.landing.onRendered(() => Session.set("breadcrumbs", "Home"));
