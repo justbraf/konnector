@@ -1,3 +1,50 @@
 <template name="matchParent">
-    Rows of results
+    <div class="row justify-content-evenly mt-3">
+        <div class="col-lg-5">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="sName"><i class="fa fa-search"
+                        aria-hidden="true"></i>&nbsp;Name</span>
+                <input type="text" class="form-control" placeholder="Search Names" aria-label="sName"
+                    aria-describedby="sName">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="sAge"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Age</span>
+                <input type="text" class="form-control" placeholder="Search Age" aria-label="sAge"
+                    aria-describedby="sAge">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="sFoun"><i class="fa fa-search"
+                        aria-hidden="true"></i>&nbsp;Location</span>
+                <input type="text" class="form-control" placeholder="Search locations where found" aria-label="sFoun"
+                    aria-describedby="sFoun">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="sGender"><i class="fa fa-search"
+                        aria-hidden="true"></i>&nbsp;Gender</span>
+                <input type="text" class="form-control" placeholder="Search Gender" aria-label="sGender"
+                    aria-describedby="sGender">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-lg-3 text-center">
+            <a href="" class="btn btn-crs js-resetFilters">Reset Filters</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">First</div>
+        <div class="col-lg-2">Last</div>
+        <div class="col-lg-2">Other</div>
+        <div class="col-lg-2">Dated Found</div>
+    </div>
+    {{#each recordsSearched}}
+    <div class="row">
+        <div class="col-lg-2">{{fName}}</div>
+        <div class="col-lg-2">{{lName}}</div>
+        <div class="col-lg-2">{{oName}}</div>
+        <div class="col-lg-2">{{dateFound}}</div>
+    </div>
+    {{/each}}
 </template>

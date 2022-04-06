@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../lib/collection.js';
 import '../lib/userAcct.js';
-// import './infiniteScroll.js';
 import '../lib/router.js';
 
 import './main.html';
@@ -15,6 +14,7 @@ import './footer/footer.html';
 import './error404.html';
 import './components/confirmation.html';
 import './components/saveDialog.html';
+import './components/viewOne.html';
 
 import './signIn/signIn.html';
 import './signIn/signIn.js';
