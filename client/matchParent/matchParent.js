@@ -5,6 +5,10 @@ resetFilters = () => {
     $("#sName + input").val("");
     Session.set("foun", "");
     $("#sFoun + input").val("");
+    Session.set("age", "");
+    $("#sage + input").val("");
+    Session.set("gender", "");
+    $("#sgender + input").val("");
 }
 
 Template.matchParent.onRendered(() => {
@@ -18,6 +22,7 @@ Template.matchParent.helpers({
         return date.format(new Date(this.createdOn), 'dddd, D MMMM YYYY');
     },
     recordsSearched() {
+        console.log(Session.get("names"));
         return profilesdb.find({
             $or: [
                 {
@@ -38,8 +43,18 @@ Template.matchParent.helpers({
                         '$options': 'i'
                     }
                 },
-                // "gender": gender,
-                // "age": age,
+                // {
+                //     "age": {
+                //         $regex: ".*" + Session.get("age") + ".*",
+                //         '$options': 'i'
+                //     }
+                // },
+                // {
+                //     "gender": {
+                //         $regex: ".*" + Session.get("gender") + ".*",
+                //         '$options': 'i'
+                //     }
+                // },
                 // "dob": dob,
                 // "natId": natId,
                 // "addr": addr,
@@ -48,12 +63,12 @@ Template.matchParent.helpers({
                 // "hair": hair,
                 // "skin": skin,
                 // "ethin": ethin,
-                {
-                    "foun": {
-                        $regex: ".*" + Session.get("foun") + ".*",
-                        '$options': 'i'
-                    }
-                },
+                // {
+                //     "foun": {
+                //         $regex: ".*" + Session.get("foun") + ".*",
+                //         '$options': 'i'
+                //     }
+                // },
                 // ,
                 // "matched": false,
                 // "agent": Meteor.userId(),
@@ -70,10 +85,15 @@ Template.matchParent.events({
     },
     'input #sName + input'() {
         Session.set("names", $("#sName + input").val());
-
-        console.log(Session.get("names"));
     },
     'input #sFoun + input'() {
-        console.log($("#sFoun + input").val());
+        Session.set("foun", $("#sFoun + input").val());
+    },
+    'input #sAge + input'() {
+        Session.set("age", $("#sAge + input").val());
+    }
+    ,
+    'input #sGender + input'() {
+        Session.set("gender", $("#sGender + input").val());
     }
 });
